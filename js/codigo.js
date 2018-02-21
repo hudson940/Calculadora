@@ -22,17 +22,21 @@ const m = {
   },
   numero: digito => {
     p.cantidadSignos = 0
-    p.operaciones.innerHTML === '0'
+    p.operaciones.innerHTML === '0' || p.resultado
       ? (p.operaciones.innerHTML = digito)
       : (p.operaciones.innerHTML += digito)
+    p.resultado = false
   },
   signo: digito => {
     ++p.cantidadSignos === 1
       ? (p.operaciones.innerHTML += digito)
       : c('mas de un signo')
+    p.cantidadDecimal = false
+    p.resultado = false
   },
   resultado: () => {
     p.resultado = true
+    p.cantidadDecimal = true
     p.operaciones.innerHTML = eval(p.operaciones.innerHTML)
   },
   decimal: digito => {
@@ -40,6 +44,7 @@ const m = {
       p.operaciones.innerHTML += digito
       p.cantidadDecimal = true
     }
+    p.resultado = false
   },
   oprimirTecla: tecla => {
     p.accion = tecla.target.getAttribute('class')
@@ -65,6 +70,9 @@ const m = {
   },
   borrar: () => {
     p.operaciones.innerHTML = 0
+    p.cantidadSignos = 0
+    p.cantidadDecimal = false
+    p.resultado = false
   },
   calculadora: (accion, digito) => {
     switch (accion) {
