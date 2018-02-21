@@ -86,7 +86,7 @@ const m = {
         m.resultado()
         break
       case 'decimal':
-        m.decimal()
+        m.decimal('.')
         break
 
       default:
