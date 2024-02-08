@@ -1,42 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Calculadora</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/estilo.css">
-
 </head>
 
 <body>
-    <center>
-        <h1>Calculadora</h1>
-    </center>
-    <div id="calculadora">
-        <div id="operaciones"></div>
-        <ul>
-            <li class="numero">1</li>
-            <li class="numero">2</li>
-            <li class="numero">3</li>
-            <li class="signo">+</li>
-            <li class="numero">4</li>
-            <li class="numero">5</li>
-            <li class="numero">6</li>
-            <li class="signo">-</li>
-            <li class="numero">7</li>
-            <li class="numero">8</li>
-            <li class="numero">9</li>
-            <li class="signo">*</li>
-            <li class="decimal">.</li>
-            <li class="numero">0</li>
-            <li class="igual">=</li>
-            <li class="signo">/</li>
-        </ul>
-        <div id="borrar" onclick="m.borrar()">BORRAR</div>
+    <div class="wrapper">
+        <!-- Remove Vecina -->
+        <img src="./images/misc/lady-cajero.png" alt="Lady cajero" class="vecina">
+        <span class="haz-click">Haz Click</span>
+        <div id="calculadora">
+            <div class="actions">
+                <div class="actions__btn red"></div>
+                <div class="actions__btn yellow"></div>
+                <div class="actions__btn green"></div>
+            </div>
+            <div id="operaciones">0</div>
+            <ul>
+                <li class="numero">1</li>
+                <li class="numero">2</li>
+                <li class="numero">3</li>
+                <li class="signo">+</li>
+                <li class="numero">4</li>
+                <li class="numero">5</li>
+                <li class="numero">6</li>
+                <li class="signo">-</li>
+                <li class="numero">7</li>
+                <li class="numero">8</li>
+                <li class="numero">9</li>
+                <li class="signo">*</li>
+                <li class="decimal">.</li>
+                <li class="numero">0</li>
+                <li class="igual">=</li>
+                <li class="signo">/</li>
+            </ul>
+            <div id="borrar" class="btn btn--orange" onclick="m.borrar()">BORRAR</div>
+        </div>
     </div>
-    <script src="js/codigo.js"></script>
+    <script defer src="js/codigo.js"></script>
 </body>
 
 </html>
